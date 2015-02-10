@@ -1,4 +1,5 @@
 (function () {
+    'use strict';
 
     var prime = function (n) {
         var i;
@@ -22,6 +23,6 @@
             }
         }
         console.log(i + ': ' + p);
-    }
+    };
 
 }())(10001);
