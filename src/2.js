@@ -1,26 +1,21 @@
-console.log((function () {
-    'use strict';
+'use strict'
 
-    var cache = {1:1, 2:2},
+function* fibonacci () {
+	let f1 = 0, f2 = 1, current = 0
+	while ( current <= 4000000 ) {
+		current = f1
+		f1 = f2
+		f2 = current + f1
+		yield current
+	}
+}
 
-    fib = function (n) {
-        if (! cache.hasOwnProperty(n)) {
-            cache[n] = fib(n-1) + fib(n-2);
-        }
-        return cache[n];
-    };
+let total = 0
 
-    return function (fib_max) {
-        var total = 0, i = 0, f = 0;
+for ( let x of fibonacci() ) {
+	if ( 0 === x % 2 ) {
+		total += x
+	}
+}
 
-        while (f < fib_max) {
-            i += 1;
-            f = fib(i);
-            if (0 === f%2) {
-                total += f;
-            }
-        }
-
-        return total;
-    };
-}())(4000000));
+console.log( total )
