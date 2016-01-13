@@ -1,0 +1,21 @@
+{
+  "name": "euler-js",
+  "version": "1.0.0",
+  "description": "Solutions for Project Euler",
+  "scripts": {
+    "build": "babel src -d lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/scotchfield/euler-js.git"
+  },
+  "author": "scotchfield",
+  "license": "GPL-2.0",
+  "bugs": {
+    "url": "https://github.com/scotchfield/euler-js/issues"
+  },
+  "homepage": "https://github.com/scotchfield/euler-js#readme",
+  "devDependencies": {
+    "babel-cli": "^6.4.0"
+  }
+}
