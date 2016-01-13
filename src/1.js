@@ -1,12 +1,12 @@
-console.log((function (n) {
-    'use strict';
+'use strict'
 
-    var total = 0, i;
-    for (i=0; i<n; i+=1) {
-        if (0 === i%3 || 0 === i%5) {
-            total += i;
-        }
-    }
+const n = 1000
+let total = 0
 
-    return total;
-}(1000)));
+for ( let i of Array( n ).keys() ) {
+	if ( 0 === i % 3 || 0 === i % 5 ) {
+		total += i
+	}
+}
+
+console.log( total )
