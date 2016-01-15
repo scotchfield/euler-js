@@ -1,18 +1,17 @@
-'use strict'
+import { range } from './util'
 
 function* values () {
-	const n = 1000
-	for ( let i of Array( n ).keys() ) {
+	for ( let i of range( 1, 999 ) ) {
 		if ( 0 === i % 3 || 0 === i % 5 ) {
 			yield i
 		}
 	}
 }
 
-let total = 0
+let result = 0
 
 for ( let x of values() ) {
-	total += x
+	result += x
 }
 
-console.log( total )
+console.log( result )

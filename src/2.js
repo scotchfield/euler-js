@@ -1,4 +1,4 @@
-'use strict'
+import 'babel-polyfill'
 
 function* fibonacci () {
 	let f1 = 0, f2 = 1, current = 0
@@ -10,12 +10,12 @@ function* fibonacci () {
 	}
 }
 
-let total = 0
+let result = 0
 
 for ( let x of fibonacci() ) {
 	if ( 0 === x % 2 ) {
-		total += x
+		result += x
 	}
 }
 
-console.log( total )
+console.log( result )
