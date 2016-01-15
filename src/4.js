@@ -1,14 +1,17 @@
-import { range, palindrome } from './util'
+import 'babel-polyfill'
 
-let largest = 0
+import _ from 'lodash'
+import { palindrome } from './util'
 
-for ( let x of range( 100, 999 ) ) {
-    for ( let y of range( 100, 999 ) ) {
+let result = 0
+
+for ( let x of _.range( 100, 999 ) ) {
+    for ( let y of _.range( 100, 999 ) ) {
         let total = x * y
-        if ( total > largest && palindrome( String( total ) ) ) {
-            largest = total
+        if ( total > result && palindrome( String( total ) ) ) {
+            result = total
         }
     }
 }
 
-console.log( largest )
+console.log( result )
