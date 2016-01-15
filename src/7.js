@@ -1,28 +1,16 @@
-(function () {
-    'use strict';
+import 'babel-polyfill'
 
-    var prime = function (n) {
-        var i;
-        if (n < 3) {
-            return true;
-        }
-        for (i = 2; i < n / 2 + 1; i += 1) {
-            if (0 === n % i) {
-                return false;
-            }
-        }
-        return true;
-    };
+import _ from 'lodash'
+import { prime } from './util'
 
-    return function (n) {
-        var p = 3, i = 2;
-        while (i < n) {
-            p += 2;
-            if (prime(p)) {
-                i += 1;
-            }
-        }
-        console.log(i + ': ' + p);
-    };
+const n = 10001
+let result = 3
 
-}())(10001);
+for ( let i of _.range( n - 2 ) ) {
+    result += 2
+    while ( ! prime( result ) ) {
+        result += 2
+    }
+}
+
+console.log( result )
