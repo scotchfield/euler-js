@@ -1,22 +1,25 @@
-(function () {
-    'use strict';
+import 'babel-polyfill'
 
-    var x = 0, i, no_divide,
-    delta = 2 * 3 * 5 * 7 * 11 * 13 * 17 * 19;
+import _ from 'lodash'
 
-    while (true) {
-        x += delta;
-        no_divide = false;
-        for (i = 2; i <= 20; i += 1) {
-            if (0 !== x % i) {
-                no_divide = true;
-                i = 20;
-            }
-        }
-        if (! no_divide) {
+const delta = 2 * 3 * 5 * 7 * 11 * 13 * 17 * 19;
+let result = 0;
+
+while ( true ) {
+    let no_divide = false;
+
+    result += delta;
+
+    for ( let i of _.range( 2, 20 ) ) {
+        if ( 0 !== result % i ) {
+            no_divide = true;
             break;
         }
     }
 
-    console.log(x);
-}());
+    if ( ! no_divide ) {
+        break;
+    }
+}
+
+console.log( result );
