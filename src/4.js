@@ -1,14 +1,4 @@
-import { range } from './util'
-
-function palindrome ( p ) {
-    for ( let i of range( 0, p.length / 2 ) ) {
-        if ( p[i] !== p[p.length - i - 1] ) {
-            return false
-        }
-    }
-
-    return true
-}
+import { range, palindrome } from './util'
 
 let largest = 0
 

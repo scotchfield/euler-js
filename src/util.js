@@ -1,9 +1,13 @@
 import 'babel-polyfill'
 
-export function* range ( start, max ) {
-    for ( let i = start; i <= max; i += 1 ) {
-        yield i
+export function palindrome ( p ) {
+    for ( let i of range( 0, p.length / 2 ) ) {
+        if ( p[i] !== p[p.length - i - 1] ) {
+            return false
+        }
     }
+
+    return true
 }
 
 export function prime ( x ) {
@@ -20,6 +24,12 @@ export function prime ( x ) {
     }
 
     return true
+}
+
+export function* range ( start, max ) {
+    for ( let i = start; i <= max; i += 1 ) {
+        yield i
+    }
 }
 
 export default {}
