@@ -1,18 +1,17 @@
-(function () {
+import 'babel-polyfill'
 
-    'use strict';
+import _ from 'lodash'
 
-    var a, b, c;
+let result = 0
 
-    for (a = 1; a < 1000; a += 1) {
-        for (b = a + 1; b < 1000; b += 1) {
-            for (c = b + 1; c < 1000; c += 1) {
-                if (a + b + c === 1000 && a * a + b * b === c * c) {
-                    console.log(a + ', ' + b + ', ' + c + ': ' + a * b * c);
-                    return;
-                }
+for ( let a of _.range( 1, 1000 ) ) {
+    for ( let b of _.range( a + 1, 1000 ) ) {
+        for ( let c of _.range( b + 1, 1000 ) ) {
+            if ( a + b + c === 1000 && a * a + b * b === c * c ) {
+                result = a * b * c
             }
         }
     }
+}
 
-}());
+console.log( result )
